@@ -14,6 +14,7 @@ public class AttackIce : MonoBehaviour
     float canDamageTimer = 0;
     private IEnumerator Start()
     {
+        
         transform.localScale = Vector3.one * .01f;
         increment = new WaitForSecondsRealtime(.01f);
         mask = LayerMask.GetMask("Damageable");
@@ -23,7 +24,9 @@ public class AttackIce : MonoBehaviour
         {
             transform.localScale *= 1.2f;
             yield return increment;
+           
         }
+        PersistantPlayer.StaticInstance.source.GenerateImpulse(.5f);
         while (transform.localScale.x > 1)
         {
             transform.localScale *= .9f;

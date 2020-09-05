@@ -27,7 +27,7 @@ public class AimRaycaster : MonoBehaviour
         if(Physics.Raycast(myRay, out RaycastHit hit, 1000f, mask))
         {
             
-            if(TryGetComponent(out Targetable targetable)) { currentTargetable = targetable; }
+            if(hit.transform.TryGetComponent(out Targetable targetable)) { currentTargetable = targetable; }
             currentLookPosition = hit.point;
             //Debug.Log($"Looking at {currentLookPosition} " + hit.collider.name);
         }

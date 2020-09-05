@@ -23,6 +23,7 @@ public class AttackFireball : MonoBehaviour
     {
         if(!other.CompareTag("NoHit") && other.gameObject != owner && !triggered)
         {
+            PersistantPlayer.StaticInstance.source.GenerateImpulse(.7f);
             foreach (ParticleSystem p in explosionFx)
             {
                 p.Play();
@@ -45,7 +46,7 @@ public class AttackFireball : MonoBehaviour
 
     private IEnumerator DisableTimer()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(1.2f);
         this.gameObject.SetActive(false);
     }
 

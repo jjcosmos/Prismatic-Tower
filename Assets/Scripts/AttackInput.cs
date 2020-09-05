@@ -16,7 +16,7 @@ public class AttackInput : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             if (attacks[(int)currentAbility].isUp)
             {
@@ -28,13 +28,19 @@ public class AttackInput : MonoBehaviour
             CycleAbility();
             Debug.Log("Cycle ability");
         }
+        foreach (Attackdef attack in attacks)
+        {
+            attack.PassTime(Time.deltaTime);
+        }
     }
 
     private void Attack()
     {
         if (currentAbility == ELensType.None)
         {
-            return;
+            AttackBasic attack = Instantiate(attacks[(int)currentAbility].prefabToSpawn).GetComponent<AttackBasic>();
+            attack.SetUpLine(firingPoint, aimRaycaster.currentLookPosition);
+            if(aimRaycaster.currentTargetable != null) { aimRaycaster.currentTargetable.DealDamage(attack.damage); }
         }
         else if (currentAbility == ELensType.Flame)
         {
@@ -42,16 +48,20 @@ public class AttackInput : MonoBehaviour
             fireball.transform.position = firingPoint.position;
             fireball.SetActive(true);
             fireball.GetComponent<AttackFireball>().owner = this.gameObject;
-            fireball.GetComponent<Rigidbody>().velocity = (aimRaycaster.currentLookPosition - firingPoint.position).normalized * attacks[(int)currentAbility].projectileSpeed;
+            fireball.GetComponent<Rigidbody>().velocity = 
+                (aimRaycaster.currentLookPosition - firingPoint.position).normalized * attacks[(int)currentAbility].projectileSpeed;
+            PersistantPlayer.StaticInstance.playerRB.AddForce((transform.position- aimRaycaster.currentLookPosition).normalized * 300f);
+            PersistantPlayer.StaticInstance.source.GenerateImpulse(.3f);
         }
         else if (currentAbility == ELensType.Frost)
         {
-            return;
+            Instantiate(attacks[(int)currentAbility].prefabToSpawn, aimRaycaster.currentLookPosition, Quaternion.identity);
         }
         else if (currentAbility == ELensType.Lightning)
         {
-            return;
+            Instantiate(attacks[(int)currentAbility].prefabToSpawn, Vector3.Scale(aimRaycaster.currentLookPosition, new Vector3(1,0,1)), Quaternion.identity);
         }
+        attacks[(int)currentAbility].currentCooldown = 0;
     }
 
     //This is gross, I know
@@ -83,5 +93,11 @@ public class Attackdef
     [SerializeField] public bool isUnlocked;
     [SerializeField] public GameObject prefabToSpawn;
     [SerializeField] public float projectileSpeed;
-    public bool isUp { get => currentCooldown <= 0;}
+    public bool isUp { get => currentCooldown >= attackCooldown;}
+
+    public void PassTime(float deltaTime)
+    {
+        currentCooldown += deltaTime;
+        if (currentCooldown > attackCooldown) { currentCooldown = attackCooldown; }
+    }
 }

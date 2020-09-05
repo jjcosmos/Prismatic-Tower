@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class Targetable : MonoBehaviour
 {
-    
+    public virtual void DealDamage(int damage)
+    {
+        
+    }
 }
