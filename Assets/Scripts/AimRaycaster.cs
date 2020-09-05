@@ -29,7 +29,7 @@ public class AimRaycaster : MonoBehaviour
             
             if(TryGetComponent(out Targetable targetable)) { currentTargetable = targetable; }
             currentLookPosition = hit.point;
-            Debug.Log($"Looking at {currentLookPosition} " + hit.collider.name);
+            //Debug.Log($"Looking at {currentLookPosition} " + hit.collider.name);
         }
         else
         {

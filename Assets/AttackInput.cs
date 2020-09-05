@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AttackInput : MonoBehaviour
 {
-
+    [SerializeField] AutoPooler fireballPooler;
     [SerializeField] List<Attackdef> attacks;
     public ELensType currentAbility = ELensType.None;
     [SerializeField] LensFXController lensFXController;
+    [SerializeField] AimRaycaster aimRaycaster;
+    [SerializeField] Transform firingPoint;
     private void Start()
     {
 
@@ -16,12 +18,39 @@ public class AttackInput : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-
+            if (attacks[(int)currentAbility].isUp)
+            {
+                Attack();
+            }
         }
         if (Input.GetButtonDown("CycleAblity"))
         {
             CycleAbility();
             Debug.Log("Cycle ability");
+        }
+    }
+
+    private void Attack()
+    {
+        if (currentAbility == ELensType.None)
+        {
+            return;
+        }
+        else if (currentAbility == ELensType.Flame)
+        {
+            GameObject fireball = fireballPooler.RequestDequeue();
+            fireball.transform.position = firingPoint.position;
+            fireball.SetActive(true);
+            fireball.GetComponent<AttackFireball>().owner = this.gameObject;
+            fireball.GetComponent<Rigidbody>().velocity = (aimRaycaster.currentLookPosition - firingPoint.position).normalized * attacks[(int)currentAbility].projectileSpeed;
+        }
+        else if (currentAbility == ELensType.Frost)
+        {
+            return;
+        }
+        else if (currentAbility == ELensType.Lightning)
+        {
+            return;
         }
     }
 
@@ -52,5 +81,7 @@ public class Attackdef
     [SerializeField] public float attackCooldown;
     [SerializeField] public float currentCooldown;
     [SerializeField] public bool isUnlocked;
+    [SerializeField] public GameObject prefabToSpawn;
+    [SerializeField] public float projectileSpeed;
     public bool isUp { get => currentCooldown <= 0;}
 }
