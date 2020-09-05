@@ -29,8 +29,8 @@ public class PlayerInput : MonoBehaviour
         {
             Quaternion moveRot = Quaternion.LookRotation(moveVec, transform.up);
             transform.rotation = Quaternion.Slerp(transform.rotation, moveRot, lookSpeed);
-            playerRb.AddForce(moveVec);
         }
+        playerRb.AddForce(moveVec);
     }
 
     private Vector3 RemoveYAxis(Vector3 vecToSquash, bool normalize)
