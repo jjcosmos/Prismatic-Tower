@@ -10,6 +10,7 @@ public class SystemSetup : MonoBehaviour
     public Transform playerCameraTransforms;
     public static float inputSensitivityX = 300f;
     public static float inputSensitivityY = 2f;
+    public static float sensMult = 1;
     public AutoPooler defaultHitPool;
     private void Awake()
     {
@@ -18,6 +19,8 @@ public class SystemSetup : MonoBehaviour
             StaticInstance = this;
             DontDestroyOnLoad(this.gameObject);
             playerCameraTransforms = Camera.main.transform;
+            inputSensitivityX = 300 * sensMult;
+            inputSensitivityY = 2 * sensMult;
         }
         else
         {
