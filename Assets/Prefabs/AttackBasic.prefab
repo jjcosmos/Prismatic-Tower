@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 5642364837011544280}
-  damage: 1
+  damage: 2
 --- !u!198 &9223037981302163239
 ParticleSystem:
   m_ObjectHideFlags: 0

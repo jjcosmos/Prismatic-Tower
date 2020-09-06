@@ -150,8 +150,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 395729769}
-  m_LocalRotation: {x: 0.032901604, y: -0.7048016, z: 0.03275835, w: 0.7078836}
-  m_LocalPosition: {x: -6.963319e-13, y: 0, z: -0.00000023841858}
+  m_LocalRotation: {x: 0.03138438, y: -0.73613477, z: 0.034214657, w: 0.67524076}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1370925732}
@@ -959,8 +959,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580753641}
-  m_LocalRotation: {x: 0.046428602, y: 0.0021777449, z: -0.000101217986, w: 0.99891925}
-  m_LocalPosition: {x: -0.06540382, y: 5, z: -14.999855}
+  m_LocalRotation: {x: 0.046385527, y: -0.043060064, z: 0.0020013824, w: 0.9979931}
+  m_LocalPosition: {x: 1.2919955, y: 5, z: -14.944256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8754033508745587307}
@@ -975,8 +975,8 @@ Camera:
   m_GameObject: {fileID: 1580753641}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1123,8 +1123,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617877580}
-  m_LocalRotation: {x: -0.07079561, y: -0.70203274, z: -0.07048737, w: 0.7051025}
-  m_LocalPosition: {x: -6.963319e-13, y: 0, z: -0.00000023841858}
+  m_LocalRotation: {x: -0.06753098, y: -0.7332428, z: -0.07362102, w: 0.672588}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1264236557}
@@ -1200,7 +1200,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784399557}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -0.06540382, y: 5, z: -14.999855}
+  m_LocalPosition: {x: 1.2919955, y: 5, z: -14.944256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 395729771}
@@ -1379,8 +1379,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1838396159}
-  m_LocalRotation: {x: 0.032901604, y: -0.7048016, z: 0.03275835, w: 0.7078836}
-  m_LocalPosition: {x: -6.963319e-13, y: 0, z: -0.00000023841858}
+  m_LocalRotation: {x: 0.03138438, y: -0.73613477, z: 0.034214657, w: 0.67524076}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 360667772}
@@ -1735,6 +1735,8 @@ MonoBehaviour:
   noodleSetup: {fileID: 145600856}
   playerPositioner: {fileID: 680951894}
   healthpool: {fileID: 6112573746568929990}
+  playerAttackInput: {fileID: 1701823894}
+  flagForHealthReset: 0
 --- !u!114 &9216445989572938291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1815,19 +1817,19 @@ MonoBehaviour:
   - lensType: 1
     attackCooldown: 1
     currentCooldown: 1
-    isUnlocked: 1
+    isUnlocked: 0
     prefabToSpawn: {fileID: 3157807051901598978, guid: b18bbd3a06684a349a3105d442f6dbdd, type: 3}
     projectileSpeed: 50
   - lensType: 2
     attackCooldown: 5
     currentCooldown: 5
-    isUnlocked: 1
+    isUnlocked: 0
     prefabToSpawn: {fileID: 3087770137100540676, guid: ad4838aa35ba20344bbe6d0c8f12ac0e, type: 3}
     projectileSpeed: 0
   - lensType: 3
     attackCooldown: 10
     currentCooldown: 10
-    isUnlocked: 1
+    isUnlocked: 0
     prefabToSpawn: {fileID: 975182730694072518, guid: 01a4c6b72296cb3409cd5b711ba80b4d, type: 3}
     projectileSpeed: 0
   currentAbility: 0
@@ -1853,6 +1855,7 @@ MonoBehaviour:
   linkedDisplay: {fileID: 0}
   notifyListener: 0
   listeners: []
+  customHitFX: {fileID: 0}
 --- !u!114 &2338508020068876084
 MonoBehaviour:
   m_ObjectHideFlags: 0

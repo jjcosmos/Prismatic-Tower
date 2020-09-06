@@ -14,6 +14,7 @@ public class PersistantPlayer : MonoBehaviour
     public SetupNoodleLeg noodleSetup;
     public PlayerPositioner playerPositioner;
     public Healthpool healthpool;
+    public AttackInput playerAttackInput;
     public bool flagForHealthReset = false;
 
     private void Awake()
@@ -24,6 +25,7 @@ public class PersistantPlayer : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
             playerRB = GetComponent<Rigidbody>();
             source = GetComponent<CinemachineImpulseSource>();
+            playerAttackInput = GetComponent<AttackInput>();
         }
         else
         {

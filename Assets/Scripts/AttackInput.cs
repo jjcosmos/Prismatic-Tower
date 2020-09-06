@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackInput : MonoBehaviour
 {
     [SerializeField] AutoPooler fireballPooler;
-    [SerializeField] List<Attackdef> attacks;
+    [SerializeField] public List<Attackdef> attacks;
     public ELensType currentAbility = ELensType.None;
     [SerializeField] LensFXController lensFXController;
     [SerializeField] AimRaycaster aimRaycaster;
