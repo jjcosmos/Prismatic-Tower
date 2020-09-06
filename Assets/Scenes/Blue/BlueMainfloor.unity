@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.44313726, g: 0.23082596, b: 0.21176472, a: 1}
+  m_AmbientSkyColor: {r: 0.16019939, g: 0.754717, b: 0.6865771, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -2695,6 +2695,14 @@ PrefabInstance:
       propertyPath: m_Data.m_Target
       value: 
       objectReference: {fileID: 1216765394}
+    - target: {fileID: 1580753644, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.04637158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580753644, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.013578683
+      objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.047039423
@@ -2715,6 +2723,22 @@ PrefabInstance:
       propertyPath: fireballPooler
       value: 
       objectReference: {fileID: 1487405118}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.023188127
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.876299
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.042391192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.47933847
+      objectReference: {fileID: 0}
     - target: {fileID: 6112573746568929990, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: linkedDisplay
       value: 
@@ -15632,6 +15656,10 @@ PrefabInstance:
     - target: {fileID: 2099305509675350583, guid: 36baf5f54b1ad1f4997fd392a0431a6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099305510230702895, guid: 36baf5f54b1ad1f4997fd392a0431a6e, type: 3}
+      propertyPath: sceneToLoad
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36baf5f54b1ad1f4997fd392a0431a6e, type: 3}
