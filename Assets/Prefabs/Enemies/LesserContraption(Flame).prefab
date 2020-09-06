@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPool: {fileID: 7861493675561272566}
+  hasSuperArmor: 0
   critMod: 1
 --- !u!114 &7861493675561272566
 MonoBehaviour:
@@ -297,6 +298,9 @@ MonoBehaviour:
   currentHealth: 0
   FXObject: {fileID: 0}
   linkedDisplay: {fileID: 5843391756359857841}
+  notifyListener: 0
+  listeners: []
+  customHitFX: {fileID: 0}
 --- !u!65 &7861493675561272567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -621,7 +625,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f0cc0415ccdcd874d83bfa04b143b575, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 49e9fe0aa1d1639479ef23e64ebf305a, type: 2}
+      objectReference: {fileID: 2100000, guid: 1070be9858072fc4baab26d450c91d1e, type: 2}
     - target: {fileID: -5362375976957781083, guid: f0cc0415ccdcd874d83bfa04b143b575, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 

@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heartDisplay: {fileID: 1520417307864774602}
+  isUnique: 0
 --- !u!1 &7538409327456518830
 GameObject:
   m_ObjectHideFlags: 0

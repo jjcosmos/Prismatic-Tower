@@ -14,7 +14,8 @@ public class EnemyAI : MonoBehaviour
 
     public virtual void KillSelf()
     {
-        if(toDeactivateOnDeath.Count < 1 || dead) { return; }
+        //Debug.Log("doin' velocity pt1");
+        if (toDeactivateOnDeath.Count < 1 || dead) { return; }
         foreach (GameObject go in toDeactivateOnDeath)
         {
             go.SetActive(false);

@@ -83,13 +83,17 @@ public class LesserContraption : EnemyAI
 
     public override void KillSelf()
     {
-        base.KillSelf();
+        
         if (!dead)
         {
             propellorRotator.enabled = false;
             myRigidbody.constraints = RigidbodyConstraints.None;
+            //Debug.Log("doin' velocity");
+            //myRigidbody.angularVelocity = 20f * Random.insideUnitSphere;
+            myRigidbody.AddTorque(2000f * Random.insideUnitSphere, ForceMode.Impulse);
             myRigidbody.AddForceAtPosition(200f * Random.insideUnitSphere + Vector3.up * 500, transform.position + Random.insideUnitSphere);
         }
+        base.KillSelf();
     }
 
 }

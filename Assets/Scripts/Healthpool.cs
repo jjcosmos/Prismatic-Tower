@@ -14,6 +14,7 @@ public class Healthpool : MonoBehaviour
     private bool canDie = true;
     public bool notifyListener;
     public List<CustomListener> listeners;
+    public GameObject customHitFX;
 
     private void Start()
     {
@@ -30,6 +31,12 @@ public class Healthpool : MonoBehaviour
         {
             Die();
             canDie = false;
+        }
+        if (customHitFX == null) 
+        {
+            GameObject go = SystemSetup.StaticInstance.defaultHitPool.RequestDequeue();
+            go.transform.position = this.transform.position;
+            go.SetActive(true);
         }
         linkedDisplay?.UpdateHealth(currentHealth, maxHealth);
     }

@@ -10,6 +10,7 @@ public class SystemSetup : MonoBehaviour
     public Transform playerCameraTransforms;
     public float inputSensitivityX = 300f;
     public float inputSensitivityY = 2f;
+    public AutoPooler defaultHitPool;
     private void Awake()
     {
         if(StaticInstance == null)
