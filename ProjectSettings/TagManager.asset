@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NoHit
   - Boss
+  - Start
   layers:
   - Default
   - TransparentFX

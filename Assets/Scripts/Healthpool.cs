@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Healthpool : MonoBehaviour
 {
@@ -8,11 +9,15 @@ public class Healthpool : MonoBehaviour
     [SerializeField] int maxHealth = 10;
     public int currentHealth;
     [SerializeField] GameObject FXObject;
-    [SerializeField] EnemyUI linkedDisplay;
+    [SerializeField] public EnemyUI linkedDisplay;
     Vector3 minuteOffset;
     private bool canDie = true;
-    private void Awake()
+    public bool notifyListener;
+    public List<CustomListener> listeners;
+
+    private void Start()
     {
+
         minuteOffset = new Vector3(0, .01f, 0);
         currentHealth = maxHealth;
         linkedDisplay?.UpdateHealth(currentHealth, maxHealth);
@@ -40,6 +45,7 @@ public class Healthpool : MonoBehaviour
         else if(deathBehaviour == EOnDeathBehaviour.Player)
         {
             Debug.Log("Player Died");
+            PersistantCanvas.staticCanvas.globalLoadZone.GlobalLoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if(deathBehaviour == EOnDeathBehaviour.DeactivateAIAndToggleGrav)
         {
@@ -62,8 +68,22 @@ public class Healthpool : MonoBehaviour
                 enemyAI.enabled = false;
             }
         }
+        if(notifyListener)
+        {
+            foreach (CustomListener c in listeners)
+            {
+                c.Notify();
+            }
+        }
     }
 
+    public void ResetHealthPool()
+    {
+        currentHealth = maxHealth;
+        linkedDisplay?.UpdateHealth(currentHealth, maxHealth);
+        linkedDisplay?.OverrideScale(Vector3.one);
+        canDie = true;
+    }
 
 }
 

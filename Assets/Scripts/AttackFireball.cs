@@ -6,6 +6,7 @@ public class AttackFireball : MonoBehaviour
 {
     public GameObject owner;
     public GameObject owner2;
+    public bool destroyOnHit = false;
     public List<GameObject> owners;
     [SerializeField] List<ParticleSystem> explosionFx;
     [SerializeField] ParticleSystem idleParticles;
@@ -50,6 +51,8 @@ public class AttackFireball : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(1.2f);
         this.gameObject.SetActive(false);
+        if(destroyOnHit)
+        { Destroy(this.gameObject); }
     }
 
     private void OnEnable()

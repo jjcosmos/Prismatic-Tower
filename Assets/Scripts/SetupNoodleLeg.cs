@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class SetupNoodleLeg : MonoBehaviour
 {
-    [SerializeField] Transform noodleFollower;
-    private void Awake()
+    [SerializeField] public Transform noodleFollower;
+    private void Start()
+    {
+        SetupNoodle();
+    }
+
+    public void SetupNoodle()
     {
         noodleFollower.position = transform.position;
+        noodleFollower.gameObject.SetActive(true);
     }
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   maxCooldownTime: 10
   chargeupTime: 2
   chargeupFX: {fileID: 6060764443091103223}
-  attackRange: 40
+  attackRange: 100
   currentCooldownTime: 0
   currentCDTimer: 0
   icePrefab: {fileID: 60892172, guid: ad4838aa35ba20344bbe6d0c8f12ac0e, type: 3}
@@ -36,9 +36,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minCooldownTime: 5
   maxCooldownTime: 15
-  chargeupTime: 0
+  chargeupTime: 3
   chargeupFX: {fileID: 6159448231932781854}
-  attackRange: 60
+  attackRange: 100
   currentCooldownTime: 0
   currentCDTimer: 0
   lightningPrefab: {fileID: 975182730694072516, guid: 01a4c6b72296cb3409cd5b711ba80b4d, type: 3}
@@ -85,6 +85,14 @@ PrefabInstance:
     - target: {fileID: 3266933179678119356, guid: ac8771dfc65d26e40bd70cca095f6d78, type: 3}
       propertyPath: m_Name
       value: FireEye2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207812024483995803, guid: ac8771dfc65d26e40bd70cca095f6d78, type: 3}
+      propertyPath: attackRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4207812024921909267, guid: ac8771dfc65d26e40bd70cca095f6d78, type: 3}
+      propertyPath: attackRange
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4207812025892973200, guid: ac8771dfc65d26e40bd70cca095f6d78, type: 3}
       propertyPath: m_Name

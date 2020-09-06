@@ -8,10 +8,12 @@ public class EnemyUI : MonoBehaviour
     public TMP_Text heartDisplay;
     private float scale;
     private bool closed;
+    public bool isUnique = false;
     private void Awake()
     {
         scale = 1;
-        transform.localScale = Vector3.one * .001f;
+        if(!isUnique)
+            transform.localScale = Vector3.one * .001f;
     }
     public void UpdateHealth(int healthleft, int healthMax)
     {
@@ -37,7 +39,10 @@ public class EnemyUI : MonoBehaviour
             closed = true;
         }
     }
-
+    public void OverrideScale(Vector3 newScale)
+    {
+        transform.localScale = newScale;
+    }
     private IEnumerator FakeAnimateClose()
     {
         while (scale > 0)
@@ -47,4 +52,6 @@ public class EnemyUI : MonoBehaviour
             yield return null;
         }
     }
+
+    
 }

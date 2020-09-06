@@ -14,6 +14,7 @@ public class AIFireballAttack : AttackBehaviour
         AttackFireball fireball = Instantiate(FireballPrefab, transform.position, Quaternion.identity);
         fireball.owner = colliderParent.gameObject;
         fireball.owner2 = this.gameObject;
+        fireball.destroyOnHit = true;
         foreach (GameObject o in owners)
         {
             fireball.owners.Add(o);

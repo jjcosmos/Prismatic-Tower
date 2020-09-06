@@ -16,7 +16,7 @@ MonoBehaviour:
   maxCooldownTime: 10
   chargeupTime: 2
   chargeupFX: {fileID: 1059012075214083673}
-  attackRange: 40
+  attackRange: 100
   currentCooldownTime: 0
   currentCDTimer: 0
   icePrefab: {fileID: 60892172, guid: ad4838aa35ba20344bbe6d0c8f12ac0e, type: 3}
@@ -124,6 +124,14 @@ PrefabInstance:
     - target: {fileID: 9025980273273293859, guid: a67a36190d9b3f441ba9aa9cbb702593, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025980274273586848, guid: a67a36190d9b3f441ba9aa9cbb702593, type: 3}
+      propertyPath: attackRange
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025980274682922536, guid: a67a36190d9b3f441ba9aa9cbb702593, type: 3}
+      propertyPath: attackRange
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9025980273573596456, guid: a67a36190d9b3f441ba9aa9cbb702593, type: 3}
