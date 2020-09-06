@@ -11,10 +11,12 @@ public class LoadZone : MonoBehaviour
     [SerializeField] float fadeOutDelay = 3f;
     [SerializeField] Image blackout;
     public bool triggered = false;
+    public bool isEnd = false;
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player") && !triggered)
         {
+            if (isEnd) { PersistantCanvas.staticCanvas.blackout.blackout.color = Color.white; }
             StartCoroutine(FadeOut(sceneToLoad));
             PlayerInput.canMove = false;
             PersistantPlayer.StaticInstance.playerRB.velocity=Vector3.zero;
@@ -26,7 +28,7 @@ public class LoadZone : MonoBehaviour
     public void GlobalLoadScene(int scene)
     {
         if (triggered) { return; }
-        StartCoroutine(FadeOut(scene));
+        StartCoroutine(FadeOut(scene - 1));
         PersistantPlayer.StaticInstance.flagForHealthReset = true;
         triggered = true;
     }
@@ -46,6 +48,6 @@ public class LoadZone : MonoBehaviour
             yield return null;
         }
         
-        SceneManager.LoadScene(scene);
+        SceneManager.LoadScene(scene + 1);
     }
 }

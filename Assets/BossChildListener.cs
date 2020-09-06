@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossChildListener : MonoBehaviour
+public class BossChildListener : CustomListener
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void Notify()
     {
-        
+        foreach (Transform child in transform)
+        {
+            GameObject go = SystemSetup.StaticInstance.defaultHitPool.RequestDequeue();
+            go.transform.position = child.position;
+            go.SetActive(true);
+        }
+        this.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
