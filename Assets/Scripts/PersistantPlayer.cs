@@ -14,6 +14,7 @@ public class PersistantPlayer : MonoBehaviour
     public SetupNoodleLeg noodleSetup;
     public PlayerPositioner playerPositioner;
     public Healthpool healthpool;
+    public bool flagForHealthReset = false;
 
     private void Awake()
     {
@@ -45,7 +46,12 @@ public class PersistantPlayer : MonoBehaviour
         noodleSetup.SetupNoodle();
         PersistantCanvas.staticCanvas.blackout.StartAnew();
         PersistantCanvas.staticCanvas.globalLoadZone.triggered = false;
-        healthpool.ResetHealthPool();
+        PlayerInput.canMove = true;
+        if (flagForHealthReset)
+        {
+            healthpool.ResetHealthPool();
+            flagForHealthReset = false;
+        }
     }
 
 

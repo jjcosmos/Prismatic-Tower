@@ -16,6 +16,8 @@ public class LoadZone : MonoBehaviour
         if(other.CompareTag("Player") && !triggered)
         {
             StartCoroutine(FadeOut(sceneToLoad));
+            PlayerInput.canMove = false;
+            PersistantPlayer.StaticInstance.playerRB.velocity=Vector3.zero;
             triggered = true;
         }
     }
@@ -24,10 +26,12 @@ public class LoadZone : MonoBehaviour
     {
         if (triggered) { return; }
         StartCoroutine(FadeOut(scene));
+        PersistantPlayer.StaticInstance.flagForHealthReset = true;
         triggered = true;
     }
     private IEnumerator FadeOut(int scene)
     {
+        blackout = PersistantCanvas.staticCanvas.blackout.blackout;
         float timer = fadeOutDelay;
         while(timer > 0)
         {

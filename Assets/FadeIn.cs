@@ -7,9 +7,10 @@ public class FadeIn : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] float fadeInDelay = 2f;
+    public Image blackout;
     IEnumerator Start()
     {
-        Image blackout = GetComponent<Image>();
+        blackout = GetComponent<Image>();
         float timer = fadeInDelay;
         while (timer > 0)
         {

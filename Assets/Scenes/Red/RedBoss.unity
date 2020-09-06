@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.08877715, g: 0.104613364, b: 0.1792453, a: 1}
+  m_AmbientSkyColor: {r: 0.3679245, g: 0.2011407, b: 0.18569775, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1052,7 +1052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06753098
+      value: -0.06753097
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1060,7 +1060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07362102
+      value: -0.073621005
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4071,6 +4071,7 @@ MonoBehaviour:
   playerCameraTransforms: {fileID: 0}
   inputSensitivityX: 450
   inputSensitivityY: 3
+  defaultHitPool: {fileID: 0}
 --- !u!1 &1673921855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6900385278981632002, guid: 8b7225dec6ac7824794038dfdd2cd570, type: 3}

@@ -16,7 +16,7 @@ MonoBehaviour:
   maxCooldownTime: 10
   chargeupTime: 2
   chargeupFX: {fileID: 3387460570736597277}
-  attackRange: 40
+  attackRange: 70
   currentCooldownTime: 0
   currentCDTimer: 0
   icePrefab: {fileID: 60892172, guid: ad4838aa35ba20344bbe6d0c8f12ac0e, type: 3}

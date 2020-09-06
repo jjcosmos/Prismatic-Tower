@@ -11,6 +11,7 @@ public class PlayerInput : MonoBehaviour
     public Transform playerCameraTransform;
     public bool canJump = true;
     private LayerMask mask;
+    public static bool canMove = true;
     void Start()
     {
         mask = LayerMask.NameToLayer("Default");
@@ -20,6 +21,7 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) { return; }
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
         float jumpMult = 0;

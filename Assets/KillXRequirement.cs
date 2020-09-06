@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KillXRequirement : MonoBehaviour
+public class KillXRequirement : CustomListener
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int enemiesToKill;
+    public int currentEnemyKillCount;
+    [SerializeField] CustomListener linkedListener;
+    private void Awake()
     {
-        
+        currentEnemyKillCount = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Notify()
     {
-        
+        base.Notify();
+        currentEnemyKillCount ++;
+        if (currentEnemyKillCount == enemiesToKill)
+        {
+            linkedListener.Notify();
+        }
     }
 }

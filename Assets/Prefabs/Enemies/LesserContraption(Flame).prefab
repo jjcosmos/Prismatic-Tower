@@ -410,6 +410,10 @@ PrefabInstance:
       propertyPath: owners.Array.data[1]
       value: 
       objectReference: {fileID: 7861493675561272563}
+    - target: {fileID: 1318492719, guid: cf374939d5e2a694a8a08d72c9e1749f, type: 3}
+      propertyPath: attackRange
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 1671781955404574472, guid: cf374939d5e2a694a8a08d72c9e1749f, type: 3}
       propertyPath: m_Name
       value: FireEye
