@@ -4869,8 +4869,8 @@ MonoBehaviour:
   lifeTime: 6
   forceRange: 10
   attractionForce: 2.5
-  damagePerTick: 5
-  damageIncrement: 1
+  damagePerTick: 1
+  damageIncrement: 3
   generatedByBoss: 0
 --- !u!1001 &7315628514603361016
 PrefabInstance:

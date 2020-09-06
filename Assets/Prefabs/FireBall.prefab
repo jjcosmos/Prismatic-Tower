@@ -14758,7 +14758,7 @@ MonoBehaviour:
   - {fileID: 1413121468}
   idleParticles: {fileID: 7395271080664268553}
   AOERadius: 3
-  damagePerShot: 5
+  damagePerShot: 3
   myRigidbody: {fileID: 0}
   myMeshRend: {fileID: 0}
 --- !u!108 &2897552409062778558

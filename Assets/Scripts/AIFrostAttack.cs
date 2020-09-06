@@ -11,12 +11,19 @@ public class AIFrostAttack : AttackBehaviour
     public override void DoFiringBehaviour()
     {
         base.DoFiringBehaviour();
-        AttackIce iceball = Instantiate(icePrefab, sampledPoint, Quaternion.Euler(Random.insideUnitSphere));
-        iceball.generatedByBoss = isBoss;
+        
         AttackBasic attack = Instantiate(linePrefab);
         attack.transform.position = transform.position;
         attack.SetUpLine(transform, sampledPoint);
+
+        StartCoroutine(SmallDelay());
     }
-    
-    
+    private IEnumerator SmallDelay()
+    {
+        yield return new WaitForSeconds(.3f);
+        AttackIce iceball = Instantiate(icePrefab, sampledPoint, Quaternion.Euler(Random.insideUnitSphere));
+        iceball.generatedByBoss = isBoss;
+    }
+
+
 }

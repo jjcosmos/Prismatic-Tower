@@ -47,15 +47,14 @@ public class AttackIce : MonoBehaviour
             }
             if(canDamageTimer > damageIncrement && hitCollider.TryGetComponent(out Hittable hittable))
             {
-                if (Vector3.Distance(hittable.transform.position, transform.position) < 2f)
+                
+                if(!(generatedByBoss && hittable.transform.CompareTag("Boss"))) 
                 {
-                    if(!(generatedByBoss && hittable.transform.CompareTag("Boss"))) 
-                    {
-                        hittable.DealDamage(damagePerTick);
-                        flagForReset = true;
-                    }
-                    
+                    hittable.DealDamage(damagePerTick);
+                    flagForReset = true;
                 }
+                    
+                
             }
 
         }
