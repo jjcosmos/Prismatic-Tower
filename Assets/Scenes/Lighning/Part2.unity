@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.36793414, g: 0.24563903, b: 0.754717, a: 1}
+  m_AmbientSkyColor: {r: 0.4745098, g: 0.85882354, b: 0.66558677, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -4754,8 +4754,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 282612471}
   playerCameraTransforms: {fileID: 0}
-  inputSensitivityX: 450
-  inputSensitivityY: 3
   defaultHitPool: {fileID: 0}
 --- !u!1 &1673921855 stripped
 GameObject:
@@ -10455,7 +10453,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980326821}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

@@ -17,6 +17,7 @@ public class LoadZone : MonoBehaviour
         if(other.CompareTag("Player") && !triggered)
         {
             if (isEnd) { PersistantCanvas.staticCanvas.blackout.blackout.color = Color.white; }
+            else { PersistantCanvas.staticCanvas.blackout.blackout.color = Color.black; }
             StartCoroutine(FadeOut(sceneToLoad));
             PlayerInput.canMove = false;
             PersistantPlayer.StaticInstance.playerRB.velocity=Vector3.zero;

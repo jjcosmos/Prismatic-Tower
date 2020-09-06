@@ -8,8 +8,8 @@ public class SystemSetup : MonoBehaviour
     public static SystemSetup StaticInstance;
     public Cinemachine.CinemachineFreeLook playerCamera;
     public Transform playerCameraTransforms;
-    public float inputSensitivityX = 300f;
-    public float inputSensitivityY = 2f;
+    public static float inputSensitivityX = 300f;
+    public static float inputSensitivityY = 2f;
     public AutoPooler defaultHitPool;
     private void Awake()
     {
