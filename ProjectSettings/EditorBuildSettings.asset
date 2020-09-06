@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Blue/BlueBoss.unity
     guid: 95d499e09ee823948adc38940df7e6e3
+  - enabled: 1
+    path: Assets/Scenes/Lighning/LightningMainfloor.unity
+    guid: fe91304d197e85d4488bc3e73140736e
+  - enabled: 1
+    path: Assets/Scenes/Lighning/LightningBoss.unity
+    guid: 31c9b23d64fe0b6478fc34df124d20c4
   m_configObjects: {}

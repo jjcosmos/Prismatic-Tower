@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HurtPlayerOnContact : MonoBehaviour
 {
+    [SerializeField] int damageDealt = 2;
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("Player"))
@@ -11,7 +12,7 @@ public class HurtPlayerOnContact : MonoBehaviour
             PersistantPlayer.StaticInstance.playerRB.AddForce(Vector3.up * 300);
             if(collision.collider.TryGetComponent(out Hittable playerHittable))
             {
-                playerHittable.DealDamage(2);
+                playerHittable.DealDamage(damageDealt);
             }
         }
     }

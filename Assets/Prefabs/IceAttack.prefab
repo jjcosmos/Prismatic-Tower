@@ -4868,7 +4868,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeTime: 6
   forceRange: 10
-  attractionForce: 2.5
+  attractionForce: 2
   damagePerTick: 1
   damageIncrement: 3
   generatedByBoss: 0

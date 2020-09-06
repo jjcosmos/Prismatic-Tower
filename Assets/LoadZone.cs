@@ -19,6 +19,7 @@ public class LoadZone : MonoBehaviour
             PlayerInput.canMove = false;
             PersistantPlayer.StaticInstance.playerRB.velocity=Vector3.zero;
             triggered = true;
+            PersistantPlayer.StaticInstance.flagForHealthReset = true;
         }
     }
 
@@ -44,6 +45,7 @@ public class LoadZone : MonoBehaviour
             }
             yield return null;
         }
+        
         SceneManager.LoadScene(scene);
     }
 }

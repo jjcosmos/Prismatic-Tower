@@ -2677,7 +2677,7 @@ PrefabInstance:
       objectReference: {fileID: 1216765394}
     - target: {fileID: 395729771, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.02318813
+      value: 0.023188127
       objectReference: {fileID: 0}
     - target: {fileID: 395729771, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2685,23 +2685,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 395729771, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.042391215
+      value: 0.042391192
       objectReference: {fileID: 0}
     - target: {fileID: 395729771, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.47933835
+      value: 0.47933847
       objectReference: {fileID: 0}
     - target: {fileID: 1500115560, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_Data.m_Target
       value: 
       objectReference: {fileID: 1216765394}
+    - target: {fileID: 1580753644, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.04637158
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580753644, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.013578683
+      objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.047039423
+      value: -0.047039434
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.08599478
+      value: -0.0859948
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2715,6 +2723,22 @@ PrefabInstance:
       propertyPath: fireballPooler
       value: 
       objectReference: {fileID: 1487405118}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.023188127
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.876299
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.042391192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1838396161, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.47933847
+      objectReference: {fileID: 0}
     - target: {fileID: 6112573746568929990, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: linkedDisplay
       value: 
@@ -4703,7 +4727,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 939.94336, w: -356.446}
+  m_margin: {x: 0, y: 0, z: 1280.5479, w: -356.446}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -9276,7 +9300,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 990.9, y: 100}
+  m_SizeDelta: {x: 1335, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1329002879
 MonoBehaviour:

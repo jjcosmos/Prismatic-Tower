@@ -16,7 +16,7 @@ MonoBehaviour:
   maxCooldownTime: 15
   chargeupTime: 3
   chargeupFX: {fileID: 5983344257253388730}
-  attackRange: 60
+  attackRange: 100
   currentCooldownTime: 0
   currentCDTimer: 0
   lightningPrefab: {fileID: 975182730694072516, guid: 01a4c6b72296cb3409cd5b711ba80b4d, type: 3}
