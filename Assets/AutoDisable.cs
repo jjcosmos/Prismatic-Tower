@@ -21,5 +21,6 @@ public class AutoDisable : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         this.gameObject.SetActive(false);
+        
     }
 }
