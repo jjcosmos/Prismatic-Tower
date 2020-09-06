@@ -16,8 +16,11 @@ public class AttackFireball : MonoBehaviour
     public Rigidbody myRigidbody;
     public MeshRenderer myMeshRend;
     bool triggered = false;
+    [SerializeField] AudioClip impactSound;
+    [SerializeField] AudioSource soundSource;
     private void Awake()
     {
+
         mask = LayerMask.GetMask("Damageable");
         myRigidbody = GetComponent<Rigidbody>();
         myMeshRend = GetComponent<MeshRenderer>();
@@ -31,7 +34,7 @@ public class AttackFireball : MonoBehaviour
             {
                 p.Play();
             }
-
+            soundSource.PlayOneShot(impactSound,1);
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, AOERadius, mask);
             foreach (var hitCollider in hitColliders)
             {
@@ -49,7 +52,13 @@ public class AttackFireball : MonoBehaviour
 
     private IEnumerator DisableTimer()
     {
-        yield return new WaitForSecondsRealtime(1.2f);
+        float timer = 0;
+        while(timer<1.3f)
+        {
+            timer += Time.deltaTime;
+            soundSource.volume = 1.3f - timer;
+            yield return null;
+        }
         this.gameObject.SetActive(false);
         if(destroyOnHit)
         { Destroy(this.gameObject); }
@@ -57,6 +66,8 @@ public class AttackFireball : MonoBehaviour
 
     private void OnEnable()
     {
+        soundSource.Play();
+        soundSource.volume = .5f;
         triggered = false;
         myRigidbody.isKinematic = false;
         myMeshRend.enabled = true;

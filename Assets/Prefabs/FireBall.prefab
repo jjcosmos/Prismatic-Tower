@@ -14763,6 +14763,8 @@ MonoBehaviour:
   damagePerShot: 3
   myRigidbody: {fileID: 0}
   myMeshRend: {fileID: 0}
+  impactSound: {fileID: 8300000, guid: 7f2e4f35ad1b5444ba002c875808cfd5, type: 3}
+  soundSource: {fileID: 1089011258399634258}
 --- !u!108 &2897552409062778558
 Light:
   m_ObjectHideFlags: 0
@@ -14833,21 +14835,21 @@ AudioSource:
   m_GameObject: {fileID: 3157807051901598978}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 688a1fbbd46836a458e59db736fa3ce3, type: 3}
+  OutputAudioMixerGroup: {fileID: 3438699978519119027, guid: eaaca93151f5f6e41bf176ae05243bb6, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c7a6292ed50932746ba3c876d1cead69, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 50
+  MaxDistance: 100
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -14880,7 +14882,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.889
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

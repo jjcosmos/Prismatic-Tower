@@ -14,9 +14,12 @@ public class AttackLightning : MonoBehaviour
     Vector3 worldCenter;
     Vector3 worldHalfExtents;
     LayerMask mask;
+    float maxVolume;
+    [SerializeField] AudioSource aSource;
     IEnumerator Start()
     {
         InitStuffs();
+        maxVolume = aSource.volume;
         tickIncrement = new WaitForSecondsRealtime(.5f);
         Vector3 scalingVec = Vector3.one;
         scalingVec.x = .01f;
@@ -60,6 +63,7 @@ public class AttackLightning : MonoBehaviour
         }
         while (scalingVec.x > 0)
         {
+            aSource.volume = maxVolume * scalingVec.x;
             scalingVec.x -= Time.deltaTime * 5;
             scalingVec.z -= Time.deltaTime * 5;
             mainScalar.localScale = scalingVec;
