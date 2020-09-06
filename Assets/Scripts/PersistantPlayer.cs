@@ -9,7 +9,7 @@ public class PersistantPlayer : MonoBehaviour
     public Rigidbody playerRB;
     public CinemachineImpulseSource source;
 
-    private void Start()
+    private void Awake()
     {
         if (StaticInstance == null)
         {

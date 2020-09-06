@@ -10,6 +10,7 @@ public class AttackIce : MonoBehaviour
     [SerializeField] int damagePerTick = 2;
     [SerializeField] float damageIncrement = 1f;
     private WaitForSecondsRealtime increment;
+    public bool generatedByBoss = false;
     LayerMask mask;
     float canDamageTimer = 0;
     private IEnumerator Start()
@@ -36,7 +37,7 @@ public class AttackIce : MonoBehaviour
     private void FixedUpdate()
     {
         bool flagForReset = false;
-        canDamageTimer += Time.deltaTime;
+        canDamageTimer += .1f;
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, forceRange, mask);
         foreach (var hitCollider in hitColliders)
         {
@@ -46,8 +47,15 @@ public class AttackIce : MonoBehaviour
             }
             if(canDamageTimer > damageIncrement && hitCollider.TryGetComponent(out Hittable hittable))
             {
-                hittable.DealDamage(damagePerTick);
-                flagForReset = true;
+                if (Vector3.Distance(hittable.transform.position, transform.position) < 2f)
+                {
+                    if(!(generatedByBoss && hittable.transform.CompareTag("Boss"))) 
+                    {
+                        hittable.DealDamage(damagePerTick);
+                        flagForReset = true;
+                    }
+                    
+                }
             }
 
         }

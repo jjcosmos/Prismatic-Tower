@@ -5,6 +5,8 @@ using UnityEngine;
 public class AttackFireball : MonoBehaviour
 {
     public GameObject owner;
+    public GameObject owner2;
+    public List<GameObject> owners;
     [SerializeField] List<ParticleSystem> explosionFx;
     [SerializeField] ParticleSystem idleParticles;
     [SerializeField] float AOERadius = 5f;
@@ -21,7 +23,7 @@ public class AttackFireball : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(!other.CompareTag("NoHit") && other.gameObject != owner && !triggered)
+        if(!other.CompareTag("NoHit") && other.gameObject != owner && !triggered && other.gameObject != owner2 && !owners.Contains(other.gameObject))
         {
             PersistantPlayer.StaticInstance.source.GenerateImpulse(.7f);
             foreach (ParticleSystem p in explosionFx)

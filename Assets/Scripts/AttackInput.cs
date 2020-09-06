@@ -26,7 +26,7 @@ public class AttackInput : MonoBehaviour
         if (Input.GetButtonDown("CycleAblity"))
         {
             CycleAbility();
-            Debug.Log("Cycle ability");
+            //Debug.Log("Cycle ability");
         }
         foreach (Attackdef attack in attacks)
         {
@@ -39,6 +39,7 @@ public class AttackInput : MonoBehaviour
         if (currentAbility == ELensType.None)
         {
             AttackBasic attack = Instantiate(attacks[(int)currentAbility].prefabToSpawn).GetComponent<AttackBasic>();
+            attack.transform.position = firingPoint.position;
             attack.SetUpLine(firingPoint, aimRaycaster.currentLookPosition);
             if(aimRaycaster.currentTargetable != null) { aimRaycaster.currentTargetable.DealDamage(attack.damage); }
         }

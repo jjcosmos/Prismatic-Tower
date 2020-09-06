@@ -14634,7 +14634,7 @@ GameObject:
   - component: {fileID: 5593380622567764068}
   - component: {fileID: 5593380622567764069}
   - component: {fileID: 2897552409062778558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FireBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14750,12 +14750,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
+  owner2: {fileID: 0}
+  owners: []
   explosionFx:
   - {fileID: 313907872}
   - {fileID: 1841360006}
   - {fileID: 1413121468}
   idleParticles: {fileID: 7395271080664268553}
-  AOERadius: 5
+  AOERadius: 3
   damagePerShot: 5
   myRigidbody: {fileID: 0}
   myMeshRend: {fileID: 0}

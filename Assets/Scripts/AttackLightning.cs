@@ -47,14 +47,14 @@ public class AttackLightning : MonoBehaviour
                 if (hitCollider.TryGetComponent(out Hittable hittable))
                 {
                     hittable.DealDamage(damagePerTick);
-                    Debug.Log($"Hitting {hitCollider.name}");
+                    //Debug.Log($"Hitting {hitCollider.name}");
                 }
                 else
                 {
-                    Debug.Log($"Hitting (but not..) {hitCollider.name}");
+                    //Debug.Log($"Hitting (but not..) {hitCollider.name}");
                 }
             }
-            PersistantPlayer.StaticInstance.source.GenerateImpulse(.5f);
+            PersistantPlayer.StaticInstance.source.GenerateImpulse(.8f);
             ticksDone++;
             yield return tickIncrement;
         }

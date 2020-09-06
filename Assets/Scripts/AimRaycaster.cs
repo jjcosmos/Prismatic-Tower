@@ -28,13 +28,14 @@ public class AimRaycaster : MonoBehaviour
         {
             
             if(hit.transform.TryGetComponent(out Targetable targetable)) { currentTargetable = targetable; }
+            else { currentTargetable = null; }
             currentLookPosition = hit.point;
             //Debug.Log($"Looking at {currentLookPosition} " + hit.collider.name);
         }
         else
         {
             currentLookPosition = Vector3.zero;
-            currentTargetable = null;
+            
         }
     }
 }

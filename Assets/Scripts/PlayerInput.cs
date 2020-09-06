@@ -9,8 +9,11 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] float jumpHeightMult = 10;
     [SerializeField] [Range(0f,1f)] float lookSpeed = .2f;
     public Transform playerCameraTransform;
+    public bool canJump = true;
+    private LayerMask mask;
     void Start()
     {
+        mask = LayerMask.NameToLayer("Default");
         playerCameraTransform = SystemSetup.StaticInstance.playerCameraTransforms;
     }
 
@@ -20,7 +23,7 @@ public class PlayerInput : MonoBehaviour
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
         float jumpMult = 0;
-        if (Input.GetButtonDown("Jump")) { jumpMult = 1; }
+        if (Input.GetButtonDown("Jump") && canJump) { jumpMult = 1; canJump = false; }
 
         Vector3 forwardVec = RemoveYAxis(playerCameraTransform.forward, true) * vInput * moveSpeedMult * Time.deltaTime;
         Vector3 rightVec = RemoveYAxis(playerCameraTransform.right, true) * hInput * moveSpeedMult * Time.deltaTime;
@@ -33,10 +36,20 @@ public class PlayerInput : MonoBehaviour
         playerRb.AddForce(moveVec);
     }
 
-    private Vector3 RemoveYAxis(Vector3 vecToSquash, bool normalize)
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Debug.Log("Trying to reset jump");
+        if (Physics.Raycast(transform.position, Vector3.down, 5f, ~mask))
+        {
+            canJump = true;
+        }
+    }
+    public static Vector3 RemoveYAxis(Vector3 vecToSquash, bool normalize)
     {
         Vector3 squashedVec = new Vector3(vecToSquash.x, 0, vecToSquash.z);
         if (normalize) { return squashedVec.normalized; }
         return squashedVec;
     }
+
+    
 }
