@@ -19,7 +19,8 @@ public class AttackBehaviour : MonoBehaviour
     protected GameObject sampledGameobject;
     bool inRange;
     public static bool cannotAttackOverride = true;
-    
+    float vol = 0;
+
     void Start()
     {
         chargeupFX.gameObject.SetActive(true);
@@ -27,6 +28,8 @@ public class AttackBehaviour : MonoBehaviour
         currentCooldownTime = Random.Range(minCooldownTime, maxCooldownTime) + chargeupTime;
         currentCDTimer = currentCooldownTime;
         inRange = false;
+        TryGetComponent<AudioSource>(out aSource);
+        if (aSource) { vol = aSource.volume; }
     }
 
     // Update is called once per frame
@@ -55,14 +58,16 @@ public class AttackBehaviour : MonoBehaviour
     {
         float lazyStop = .1f;
         //Debug.Log("FIRING");
+        aSource?.Stop();
+        if (aSource) { aSource.volume = vol; }
         aSource?.Play();
         chargeupFX.Play(true);
         yield return new WaitForSeconds(chargeupTime-lazyStop);
         chargeupFX.Stop(true);
-        float vol = 0;
-        if (aSource) { vol = aSource.volume; aSource.volume = 0; }
-        aSource?.Stop();
-        if (aSource) { aSource.volume = vol; }
+        
+        if (aSource) { vol = aSource.volume; aSource.volume = .1f; }
+        
+        
         GetSamplePoint();
         yield return new WaitForSeconds(lazyStop);
         

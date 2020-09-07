@@ -1092,11 +1092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06753098
+      value: -0.06753099
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.07362102
+      value: -0.07362103
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2795,6 +2795,7 @@ GameObject:
   - component: {fileID: 1183042944}
   - component: {fileID: 1183042948}
   - component: {fileID: 1183042949}
+  - component: {fileID: 1183042950}
   m_Layer: 2
   m_Name: TriggerZone
   m_TagString: NoHit
@@ -2896,6 +2897,7 @@ MonoBehaviour:
   trigger: {fileID: 1183042944}
   protection: {fileID: 1980326823}
   bossUI: {fileID: 6578328441519252773}
+  childActivation: {fileID: 0}
 --- !u!114 &1183042949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2908,6 +2910,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045c97be653631a4f886bd51ac0cc75e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aSource: {fileID: 1183042950}
+  clip: {fileID: 8300000, guid: 27a5841d734a2e44f926205456559c77, type: 3}
+--- !u!82 &1183042950
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183042943}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 3438699978519119027, guid: eaaca93151f5f6e41bf176ae05243bb6, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.341
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 0
+  MinDistance: 1
+  MaxDistance: 200
+  Pan2D: 0
+  rolloffMode: 2
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1216765390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,6 +3456,7 @@ MonoBehaviour:
   fadeOutDelay: 1
   blackout: {fileID: 68078950}
   triggered: 0
+  isEnd: 0
 --- !u!114 &1331714705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4586,8 +4687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 282612471}
   playerCameraTransforms: {fileID: 0}
-  inputSensitivityX: 450
-  inputSensitivityY: 3
   defaultHitPool: {fileID: 0}
 --- !u!1 &1673921855 stripped
 GameObject:
