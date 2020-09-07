@@ -54,6 +54,7 @@ public class PersistantPlayer : MonoBehaviour
             healthpool.ResetHealthPool();
             flagForHealthReset = false;
         }
+        SingletonMusicPlayer.StaticMusicPlayer.SwapTrack(EMusicState.Ambient, true, false);
     }
 
 

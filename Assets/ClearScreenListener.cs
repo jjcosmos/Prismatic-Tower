@@ -11,5 +11,6 @@ public class ClearScreenListener : CustomListener
         base.Notify();
         PersistantCanvas.staticCanvas.RemoveBossText();
         aSource?.PlayOneShot(clip);
+        SingletonMusicPlayer.StaticMusicPlayer.SwapTrack(EMusicState.None, false, false);
     }
 }

@@ -18,12 +18,13 @@ public class BossTriggerZone : MonoBehaviour
             childActivation.SetActive(false);
         }
         AttackBehaviour.cannotAttackOverride = true;
-
+        SingletonMusicPlayer.StaticMusicPlayer.SwapTrack(EMusicState.None, false, false);
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
         {
+            SingletonMusicPlayer.StaticMusicPlayer.SwapTrack(EMusicState.Boss, false, true);
             trigger.enabled = false;
             protection.enabled = false;
             bossUI.OverrideScale(Vector3.one);
