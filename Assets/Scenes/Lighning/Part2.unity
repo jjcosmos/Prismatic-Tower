@@ -1092,11 +1092,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.06753097
+      value: -0.06753098
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.073621005
+      value: -0.07362102
       objectReference: {fileID: 0}
     - target: {fileID: 1617877582, guid: ced6d5a569e218641bc5932d0404f9e5, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2869,7 +2869,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183042943}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -10543,7 +10543,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 14.79
+  m_Radius: 19.9
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1980326824
 MeshRenderer:
@@ -20864,6 +20864,34 @@ PrefabInstance:
     - target: {fileID: 2563437292653844952, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
       propertyPath: m_text
       value: Effigy of Grief
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578328441630043174, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: maxCooldownTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578328442663034172, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: minCooldownTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6578328442663034172, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: maxCooldownTime
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421731698389488356, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: maxCooldownTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421731698389488356, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: minCooldownTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421731699121789548, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: maxCooldownTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421731699121789548, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
+      propertyPath: minCooldownTime
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8421731699664935148, guid: 5eea6489cdc74134aaa7a287b0dc225f, type: 3}
       propertyPath: m_LocalPosition.x
