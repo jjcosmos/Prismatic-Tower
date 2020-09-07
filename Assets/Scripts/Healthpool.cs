@@ -15,6 +15,8 @@ public class Healthpool : MonoBehaviour
     public bool notifyListener;
     public List<CustomListener> listeners;
     public GameObject customHitFX;
+    [SerializeField] AudioClip overrideClip;
+    [SerializeField] AudioSource aSource;
 
     private void Start()
     {
@@ -27,18 +29,24 @@ public class Healthpool : MonoBehaviour
     {
         currentHealth += mod;
         //Debug.Log($"modding {name}'s health by {mod}. Current health is {currentHealth}");
-        if(currentHealth <= 0 && canDie)
-        {
-            Die();
-            canDie = false;
-        }
-        if (customHitFX == null) 
+        if (customHitFX == null && canDie)
         {
             GameObject go = SystemSetup.StaticInstance.defaultHitPool.RequestDequeue();
             go.transform.position = this.transform.position;
             go.SetActive(true);
         }
+        if (currentHealth <= 0 && canDie)
+        {
+            Die();
+            canDie = false;
+        }
+        
         linkedDisplay?.UpdateHealth(currentHealth, maxHealth);
+
+        if(overrideClip && aSource)
+        {
+            aSource.PlayOneShot(overrideClip);
+        }
     }
 
     private void Die()

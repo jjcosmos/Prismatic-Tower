@@ -8,6 +8,8 @@ public class DoorListener : CustomListener
     private Vector3 open;
     public bool isOpen;
     bool isStatic = true;
+    [SerializeField] AudioSource aSource;
+    [SerializeField] AudioClip clip;
     void Start()
     {
         open = new Vector3(0, 0, -4.3f);
@@ -16,6 +18,10 @@ public class DoorListener : CustomListener
     public override void Notify()
     {
         base.Notify();
+        if(!isOpen)
+        {
+            aSource.PlayOneShot(clip);
+        }
         isOpen = !isOpen;
         isStatic = false;
     }

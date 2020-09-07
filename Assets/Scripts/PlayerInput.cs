@@ -12,6 +12,8 @@ public class PlayerInput : MonoBehaviour
     public bool canJump = true;
     private LayerMask mask;
     public static bool canMove = true;
+    [SerializeField] AudioSource aSource;
+    [SerializeField] AudioClip jumpSfx;
     void Start()
     {
         mask = LayerMask.NameToLayer("Default");
@@ -25,7 +27,7 @@ public class PlayerInput : MonoBehaviour
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
         float jumpMult = 0;
-        if (Input.GetButtonDown("Jump") && canJump) { jumpMult = 1; canJump = false; }
+        if (Input.GetButtonDown("Jump") && canJump) { jumpMult = 1; canJump = false; aSource.PlayOneShot(jumpSfx); }
 
         Vector3 forwardVec = RemoveYAxis(playerCameraTransform.forward, true) * vInput * moveSpeedMult * Time.deltaTime;
         Vector3 rightVec = RemoveYAxis(playerCameraTransform.right, true) * hInput * moveSpeedMult * Time.deltaTime;

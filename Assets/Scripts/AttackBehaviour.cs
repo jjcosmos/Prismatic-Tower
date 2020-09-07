@@ -10,6 +10,8 @@ public class AttackBehaviour : MonoBehaviour
     [SerializeField] float chargeupTime;
     [SerializeField] ParticleSystem chargeupFX;
     [SerializeField] float attackRange = 20;
+    [SerializeField] AudioSource aSource;
+    
     public float currentCooldownTime;
     public float currentCDTimer;
     private Coroutine firingCoroutine;
@@ -17,6 +19,7 @@ public class AttackBehaviour : MonoBehaviour
     protected GameObject sampledGameobject;
     bool inRange;
     public static bool cannotAttackOverride = true;
+    
     void Start()
     {
         chargeupFX.gameObject.SetActive(true);
@@ -52,10 +55,14 @@ public class AttackBehaviour : MonoBehaviour
     {
         float lazyStop = .1f;
         //Debug.Log("FIRING");
-        
+        aSource?.Play();
         chargeupFX.Play(true);
         yield return new WaitForSeconds(chargeupTime-lazyStop);
         chargeupFX.Stop(true);
+        float vol = 0;
+        if (aSource) { vol = aSource.volume; aSource.volume = 0; }
+        aSource?.Stop();
+        if (aSource) { aSource.volume = vol; }
         GetSamplePoint();
         yield return new WaitForSeconds(lazyStop);
         

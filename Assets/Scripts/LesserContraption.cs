@@ -13,6 +13,7 @@ public class LesserContraption : EnemyAI
     [SerializeField] float idleBobScaler;
     [SerializeField] float wanderOscillationFreq;
     [SerializeField] float randomTorqueRange;
+    
     public float timeSinceLastDecision = 0;
     public EAIState myState;
     private Transform flankTargetSingleton;
